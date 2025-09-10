@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IS&display=swap');
+
+/* Custom property untuk rotasi */
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+body {
+  background: #31476d;
+  text-align: center;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+img {
+  --border-angle: 0deg;
+  border-radius: 12px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0px 2px 6px hsl(0 0% 0% / 40%);
+  border: 0.5rem solid transparent;
+  animation: spin 3s infinite linear;
+
+  /* Border pelangi bergerak */
+  background: 
+    linear-gradient(white, white) padding-box,
+    conic-gradient(
+      from var(--border-angle),
+      oklch(90% 0.37 0deg),
+      oklch(90% 0.37 60deg),
+      oklch(90% 0.37 120deg),
+      oklch(90% 0.37 180deg),
+      oklch(90% 0.37 240deg),
+      oklch(90% 0.37 300deg),
+      oklch(90% 0.37 360deg)
+    ) border-box;
+}
+
+/* Animasi putar */
+@keyframes spin {
+  to { --border-angle: 1turn; }
+}
+
+h3 {
+  margin: 10px 0 0;
+  color: yellow;
+}
+
+p {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+fieldset {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  border: 2px solid #00f7ff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00f7ff;
+}
+
+hr {
+  max-width: 500px;
+  border: none;
+  border-top: 2px solid #00f7ff;
+  margin: 30px auto;
+}

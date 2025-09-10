@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.header{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/007/633/589/non_2x/illustration-of-summer-landscape-smoky-forest-green-mist-mountains-hiking-background-in-flat-banner-style-free-vector.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color:  rgb(192, 239, 230);
+    padding: 60px;
+    font-weight: bold;
+    font-size: 60px;
+    
+}
+
+
+.navbar{
+    overflow: hidden;
+    background-color: rgb(99, 28, 28);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:aliceblue;
+    float:left;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.navbar a:hover{
+    background-color: aquamarine;
+    color: brown;
+}
+
+.column.side{
+    width: 25%;
+    text-align: center;
+    border: 1px solid brown;
+}
+.column.middle{
+    width:50%;
+    text-align: center;
+}
+
+.column{
+    float:left;
+    padding: 100px;
+}
+
+.footer{
+    background-color: burlywood;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    font-weight: bold;
+    font-size: 30px;
+
+}
+
+.row::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+
+

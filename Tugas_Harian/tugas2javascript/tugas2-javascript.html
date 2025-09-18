@@ -1,0 +1,141 @@
+<!-- Nama : Muhammad Rafi Hidayat -->
+<!-- Kampus : Universitas Negeri Surabaya -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas 2 JavaScript</title>
+  <style>
+    body {
+      background-color: #316d40;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+    }
+    h2 {
+      color: white;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    thead {
+      background: #2d502c;
+      color: white;
+    }
+    thead th, tbody td {
+      padding: 12px;
+      text-align: center;
+    }
+    form {
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    form label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Data Pegawai</h2>
+
+  <!-- Form Input -->
+  <form id="pegawaiForm">
+    <label>Nama: <input type="text" id="nama" required></label>
+    <label>Umur: <input type="number" id="umur" required></label>
+    <label>Jabatan:
+      <select id="jabatan">
+        <option value="Manager">Manager</option>
+        <option value="Asisten Manager">Asisten Manager</option>
+        <option value="Staff">Staff</option>
+      </select>
+    </label>
+    <label>Status:
+      <select id="status">
+        <option value="Menikah">Menikah</option>
+        <option value="Belum Menikah">Belum Menikah</option>
+      </select>
+    </label>
+    <button type="submit">Tambah</button>
+  </form>
+
+  <!-- Tabel -->
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Pegawai</th>
+        <th>Umur</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+        <th>Gaji Pokok</th>
+        <th>Tunjangan Jabatan</th>
+        <th>BPJS</th>
+        <th>Tunjangan Keluarga</th>
+        <th>Total Gaji</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    
+    </tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById("pegawaiForm");
+    const tableBody = document.getElementById("tableBody");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // cegah reload halaman
+
+      // ambil input
+      let nama = document.getElementById("nama").value;
+      let umur = document.getElementById("umur").value;
+      let jabatan = document.getElementById("jabatan").value;
+      let status = document.getElementById("status").value;
+
+      // hitung gaji pokok
+      let gajiPokok = 0;
+      if (jabatan === "Manager") gajiPokok = 15000000;
+      else if (jabatan === "Asisten Manager") gajiPokok = 10000000;
+      else if (jabatan === "Staff") gajiPokok = 3000000;
+
+      let tunjanganJabatan = 0.15 * gajiPokok;
+      let bpjs = 0.1 * gajiPokok;
+      let tunjanganKeluarga = (status === "Menikah") ? 0.2 * gajiPokok : 0;
+      let totalGaji = gajiPokok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+      // buat baris tabel baru
+      let row = `
+        <tr>
+          <td>${nama}</td>
+          <td>${umur}</td>
+          <td>${jabatan}</td>
+          <td>${status}</td>
+          <td>${gajiPokok}</td>
+          <td>${tunjanganJabatan}</td>
+          <td>${bpjs}</td>
+          <td>${tunjanganKeluarga}</td>
+          <td>${totalGaji}</td>
+        </tr>
+      `;
+      tableBody.innerHTML += row;
+
+      // reset form
+      form.reset();
+    });
+  </script>
+</body>
+</html>

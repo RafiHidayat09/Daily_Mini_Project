@@ -1,0 +1,280 @@
+#root {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #633b08 0%, #2f5d50 100%);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* HEADER */
+header {
+    width: 100%;
+    background: linear-gradient(90deg, #8a520a, #2f5d50);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    color: #fff;
+    animation: fadeDown 1s ease;
+}
+/* Hero Container */
+.container.my-5 {
+  background-color: #ffffff;
+  /* putih bersih */
+  border-radius: 6px;
+  /* sudut lembut */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  /* bayangan soft */
+  padding: 2rem;
+}
+
+/* Judul */
+.container.my-5 h1 {
+  color: #3b2f2f;
+/
+}
+
+/* Paragraf */
+.container.my-5 p {
+  color: #4b6043;
+
+}
+
+/* Tombol utama */
+.container.my-5 .btn-primary {
+  background-color: #4b6043;
+  border-color: #4b6043;
+}
+
+.container.my-5 .btn-primary:hover {
+  background-color: #3b4d34;
+  /* hijau lebih gelap */
+  border-color: #3b4d34;
+}
+
+/* Tombol secondary */
+.container.my-5 .btn-outline-secondary {
+  color: #8a520a;
+  /* coklat hangat */
+  border-color: #8a520a;
+}
+
+.container.my-5 .btn-outline-secondary:hover {
+  background-color: #8a520a;
+  color: #fff;
+}
+
+header span{
+  color: white;
+}
+
+header a {
+  color: #fdfaf6 !important;
+  font-weight: 500;
+}
+
+header a:hover {
+  color: #cce3d1 !important;
+  /* hijau lembut */
+  text-decoration: underline;
+}
+
+/* TOMBOL */
+.btn-primary {
+  background-color: #2f5d50;
+  /* hijau rimba */
+  border-color: #2f5d50;
+}
+
+.btn-primary:hover {
+  background-color: #23463b;
+  border-color: #23463b;
+}
+
+.btn-outline-primary {
+  color: #fdfaf6;
+  border-color: #fdfaf6;
+}
+
+.btn-outline-primary:hover {
+  background-color: #fdfaf6;
+  color: #8a520a;
+}
+
+/* HERO */
+
+.fw-light{
+  color: white;
+}
+p .lead.text-body-secondary{
+  color: white;
+}
+.display-4 {
+  color: #fdfaf6;
+}
+
+.lead {
+  color: #f3e8d3;
+}
+
+/* CARD PRODUK */
+.card {
+  border: none;
+  border-radius: 14px;
+  background: #fff;
+  /* biar bersih */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Gambar di card */
+.card img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  /* zoom halus saat hover */
+}
+
+/* Body card */
+.card-body {
+  padding: 1rem 1.2rem;
+  background: #fdfbf8;
+  /* krem lembut */
+}
+
+/* Judul / nama produk */
+.card-text {
+  color: #3e2f2f;
+  /* coklat hangat */
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Harga */
+.card small {
+  color: #2e5d34;
+  /* hijau rimba menenangkan */
+  font-weight: 600;
+}
+
+/* Tombol custom */
+.card .btn {
+  border-radius: 8px;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.card .btn-outline-secondary {
+  border-color: #3e2f2f;
+  color: #3e2f2f;
+}
+
+.card .btn-outline-secondary:hover {
+  background: #3e2f2f;
+  color: #fff;
+}
+
+.card .btn-primary {
+  background: #2e5d34;
+  /* hijau */
+  border-color: #2e5d34;
+}
+
+.card .btn-primary:hover {
+  background: #244a2a;
+  /* hijau lebih tua */
+  border-color: #244a2a;
+}
+
+
+/* Animasi */
+@keyframes bgShift {
+  0% {
+    background: linear-gradient(135deg, #633b08 0%, #2f5d50 100%);
+  }
+
+  50% {
+    background: linear-gradient(135deg, #2f5d50 0%, #8a520a 100%);
+  }
+
+  100% {
+    background: linear-gradient(135deg, #3a1f04 0%, #1d3b35 100%);
+  }
+}
+
+/* Header fade slide */
+header {
+  animation: fadeDown 1s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero container muncul halus */
+.container.my-5 {
+  animation: fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tombol interaktif */
+.btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Card efek bernafas */
+.card {
+  animation: cardPulse 6s ease-in-out infinite;
+}
+
+@keyframes cardPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.01);
+  }
+}
+
+/* Gambar di card ada efek parallax kecil */
+.card:hover img {
+  transform: scale(1.08) rotate(-1deg);
+}
+
